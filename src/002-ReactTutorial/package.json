@@ -1,0 +1,29 @@
+{
+  "name": "002-react-tutorial",
+  "version": "1.0.0",
+  "description": "002 demo",
+  "main": "index.js",
+  "scripts": {
+    "postinstall":"tsd install",
+    "start":"webpack && json-server --watch db.json",
+    "build":"webpack",
+    "clean": "find -E . -regex './app/.+\\.(js|map)$' -type f | xargs rm",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "BoyceLyu",
+  "license": "ISC",
+  "dependencies": {      
+      "react":"^0.14.7",
+      "react-dom":"^0.14.7",
+      "tsd":"^0.6.5",
+      "typescript":"^1.7.5",
+      "jquery": "^2.1.4",
+      "json-server": "^0.8.1"
+  },
+  "devDependencies": {
+      "html-webpack-plugin":"^1.6.2",
+      "ts-loader": "^0.8.1",
+      "typings": "^0.6.8",
+      "webpack": "^1.12.13"
+  }
+ }
