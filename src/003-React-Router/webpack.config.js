@@ -1,20 +1,47 @@
 var webpack = require('webpack');  
+var path = require('path');
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {  
-  entry: './app/app.tsx',
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
+var appList = ['./app/client/app.tsx'];
+if(process.env.NODE_ENV === 'development') { 
+  appList.push('webpack-hot-middleware/client');
+}
+
+var currentPath = process.cwd();
+
+
+module.exports = {
+  devtool: 'source-map',  
+  entry: {
+    app: appList
+  },
   output: {
-    filename: './build/bundle.js'
+    path: path.resolve(__dirname, "app/static"),
+    filename: "bundle.js",
+    publicPath: "/static/"
   },
-  // Turn on sourcemaps
-  devtool: 'source-map',
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),    
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+    new HtmlWebpackPlugin({
+      template: './app/client/index.html'
+    })
+  ],
   resolve: {
-    extensions: ['', '.webpack.js', '.web.js', '.ts', '.js', '.tsx', '.d.ts']
+    root: [
+      path.join(currentPath, 'app/assets/stylesheets')
+    ],
+    extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
   },
-  module: { 
+  module: {
     loaders: [
-      { test: /\.ts$/, loader: 'ts' },
-      { test: /\.tsx$/, loader: 'ts' },
-      { test: /\.d.ts/, loader: 'ts' }
+      { test: /\.tsx?$/, loaders: ['react-hot', 'ts-loader'] },
+      { test: /\.less$/, loader: 'style!css!less?strictMath' },
+      { test: /\.css$/, loader: 'style!css' },
     ]
   }
-}
+};

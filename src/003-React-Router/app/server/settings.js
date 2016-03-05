@@ -1,7 +1,5 @@
-/// <reference path="../interfaces/interfaces.d.ts" />
-import * as path from 'path';
-
-let settings = {
+var path = require('path');
+var settings = {
     env: process.env.NODE_ENV || 'development',
     root: path.normalize(path.join(__dirname, '../../')),
     appRoot: path.normalize(path.join(__dirname, '../')),
@@ -12,5 +10,6 @@ let settings = {
         session: ''
     }
 };
-
-export default settings;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = settings;
+//# sourceMappingURL=settings.js.map

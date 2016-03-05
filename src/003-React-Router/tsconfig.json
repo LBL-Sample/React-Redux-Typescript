@@ -5,18 +5,13 @@
         "module": "commonjs",
         "moduleResolution": "node",
         "isolatedModules": false,
-        "jsx": "react",
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "declaration": false,
-        "noImplicitAny": false,
-        "removeComments": true,
-        "noLib": false,
-        "preserveConstEnums": true,
-        "suppressImplicitAnyIndexErrors": true
+        "jsx": "react"        
     },
+    "filesGlob":[
+        "./**/*.ts"
+    ],
     "files": [
         "app/interfaces/interfaces.d.ts",
-        "app/app.tsx"
+        "app/client/app.tsx"       
     ]
 }
