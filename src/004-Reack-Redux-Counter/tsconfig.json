@@ -10,6 +10,6 @@
     ],
     "files": [
     "typings/tsd.d.ts",
-    "app/index.tsx"
+    "app/app.tsx"
     ]
 }
