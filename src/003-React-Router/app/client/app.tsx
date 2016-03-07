@@ -27,7 +27,7 @@ class About extends React.Component<any, any> {
             <div>
                 <h2>About</h2>
                 <p>this an about</p>
-                </div>
+            </div>
         );
     };
 }
