@@ -1,0 +1,31 @@
+{
+  "name": "005-react-redux-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "todo"
+  ],
+  "author": "BoyceLyu",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.3",
+    "lodash": "^4.6.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.0",
+    "redux": "^3.3.1",
+    "redux-actions": "^0.9.1",
+    "tsd": "^0.6.5",
+    "typescript": "^1.8.7"
+  },
+  "devDependencies": {
+    "ts-loader": "^0.8.1",
+    "webpack": "^1.12.14"
+  }
+}
